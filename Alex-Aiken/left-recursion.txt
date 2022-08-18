@@ -1,0 +1,29 @@
+The left -recursion causes an infinite loop
+the problem lies in the fact that the string is inherently built from the right to left fashion, 
+but the RD algorithm which is top down, is trying to build it form left to right. In order to solve this we can just change the grammar slightly
+
+S : Sa|Sb|Sc|Sd|a'|b'|c'
+->
+S starts with any one of a',b',c' and then is followed by a non zero number of 
+abcd, 
+So we generate it left to right as follows
+S :a'S'|b'S'|c'S'
+S' : aS'|bS'|cS'|dS'|eps
+
+The general case of left recursion can be eliminated with an algorithm
+S ->+ Sa
+//for several variables in the grammar
+let the variables be A_1 , A_2, ...A_n 
+A_1 => A_1a ...etc
+basically we raise the lower limit on every production to prevent A_1 ->+ A_1b
+actually happenning
+Algorithm:
+for i from 1 to n 
+	for j from 1 to i - 1
+		rewrite all A_i -> A_jb_j in terms of pure A_j (not ethat A_j will have connections with only k > j)
+	endfor
+	clear immediate left recursions of A_i 
+	this means A_i has connections only with k > i 
+	A_j may still have connections with A_i still
+endfor
+
