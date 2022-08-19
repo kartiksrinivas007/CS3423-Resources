@@ -1,0 +1,20 @@
+
+Why nabla
+1. What is nabla?
+Language Specifications:-
+2. Primitive data-types - int float...etc
+3. Arrays-(Tensors) - array indexing/dereferencing
+4. Functions available for tensors:- pow, add, mult, sub, elementwise, convolution(maybe),cosine, sine, exp(), log()
+4. Control flow
+	5. for-loops
+	6. if statement
+7. Modes-Normal, Autodiff
+8. Do we give the possiblisity of functions 
+9. no #define's and typedefs
+10. NO pointers
+Autodiff is one feature we want to build, explain the process and then talk about the control flow, etc : 
+Compiler-Plan
+1. Transform to LLVM-IR
+2. Write code for matrix multiplication ourselves
+3. Combine the IR's and feed it into LLVM
+
