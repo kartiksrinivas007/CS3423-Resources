@@ -1,0 +1,27 @@
+
+The algorithm mantains a parsing table which contains the operation correspoinding the the corresponding lookahead seen by the next pointer, the stack contains the frontier of the parse tree present
+
+E -> T X
+T -> (E) | int Y 
+Y -> * T | e
+X ->  + E | e 
+(left factored grammar) 
+
+The stack will initiall by E $ , and then - . TX$ ( on some valid lookahead) 
+...etc 
+
+Algorithm
+Init stack  S $
+while (!stack.is_empty()){
+	if(T == nonTerm){
+		perform(T,*next) change to stack 
+		if no match()
+		error()
+	}
+	else if(T == term){
+		match(term,*next++)
+	}
+	if(*next == $){
+		check nullabliliy of stack
+	}
+}

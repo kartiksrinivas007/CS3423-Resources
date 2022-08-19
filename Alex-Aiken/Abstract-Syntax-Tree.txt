@@ -1,6 +1,0 @@
-The abstract syntax tree is a simplified version of the parse tree that 
-removes redundant nodes ( eg  nodes with only a single child are replaced with only the child).
-say T -> ( E + E ) and E -> int 
-It focuses more on the operation, since the parse tree alread has parsed the input in the correct order( BODMAS - wise). So the AST gets rid of the brackets and makes something like this :-
-
-plus (5, -> plus(3, 2)) 
