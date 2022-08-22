@@ -1,0 +1,37 @@
+
+Follow(X) = {t | S =>+ beta X t delta}
+
+Intuition 
+X => AB then First(B) belongs to Follow(A)
+"" , Follow(X) is a subset of follow(B), Xt -> ABt
+"", Follow(X) is a subset of follow(A) is B is nullable!
+
+$ is in the follow of S 
+
+Algorithm:
+$ in Follow(S)
+
+consider A-> alpha X beta
+
+First(beta) - {epsilon} is  a subset of Follow(X)
+Follow(A) is a superset of Follow(beta) and also Follow(X)(provided beta is nullable)
+E => TX 
+T => (E) | int Y
+X => +E | eps
+Y => *T | eps
+
+Follow(E) = {$,),....}
+Follow(X) is a subset of Follow (E) ( by 3 ) 
+Follow(E) is a subset of follow(X) (by 1)
+so both must be equal 
+Follow(X) = Follow(E)
+Follow(E) = {$,), ....}
+Follow(T) = must have First(X) and Follow(T) is a superset of Follow(E) ( because of X nullability) 
+Follow(T) is also a superset of Follow(Y)
+Follow(Y) is also a superset of Follow(T)
+so follow(T) = follow(Y)
+Follow(T) = {+,$,)} = Follow(Y)
+Follow(() = {First(E)}
+Follow()) = Follow(T) = { +, $, )}
+Follow(*) = First(T) + ( T not nullable)
+Follow(int) = First(y) + FOllow(T)  = {*,+, $, )}
