@@ -1,0 +1,20 @@
+
+First(X) = {t | X => ta} U {Eps | X => Eps}
+
+First(term)  = term
+eps belong to First(T) 
+and T => A_1A_2...A_n, if eps belongs to first of A_i for all i then eps belongs to First(T)
+
+First(alpha) is a subset of First(X) if X => A_1A_2...A_n(alpha) and all A_i are nullable
+
+E => TX 
+T => (E) | int Y 
+X => +E | eps
+Y => *T | eps
+
+X -> nullable
+Y -> nullable
+first(X) = {*, eps}
+first(Y)  ={* , eps}
+first(T) = {( , int}
+Since T is not nullable, it follows that first(E) is a superset of first(T) in this case they are actually equal since T is not nullable.
