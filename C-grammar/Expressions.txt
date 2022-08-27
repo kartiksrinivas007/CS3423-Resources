@@ -1,0 +1,17 @@
+
+The expressions are of the following forms 
+
+primary expression - constant, id, string_literal, (expression)
+postfix expression -> primary_expression or primary_expression [exp], or a function call like postif_exp(arg-exp_list)
+primary_exp ++
+primalry_exp--..etc even -> anything that is postfix and is an lvalue
+
+postfix -> unary -> cast -> multiplicative -> additive -> shift -> relational -> equality -> bitwise and -> bitwise XOR -> bitwise OR -> &&, ||, ternary -> conditional ( the net value will be true false or an object of some sort) !
+
+then we reach a critical point in the grammar, 
+
+assignment_expr -> conditional_exp | unary_exp!!! ASS_OP conditional_exp  
+the lhs of a particular assignment expression can ONLY be a unary_expression 
+
+an expression is only a bunch of assignment expressions seperated by commas
+constant_expressions are same as conditional ones
