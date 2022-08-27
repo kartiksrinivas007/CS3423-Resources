@@ -1,0 +1,17 @@
+
+declaration -> 
+declaration_spec, list of initialized declarators
+
+specs are basically lists of storage class spec and type_specifiers (they contain TYPE_NAME (i.e it could also be an identifier) ( probably for structs this is useful) and also type qualifiers like CONST and VOLATILE
+
+init_declarator -> bunch of (declarators or declarators = initializers)
+
+declarator = pointer ( direct_declarator ) or direct_declarator
+direct)declarator is like arrays and so and so , with their brackets and all 
+like
+a[1][1] or a ( int m , int l ) etc , like function declarations as well
+
+initializer_list == {bunch of assignment_expressions separated by commas}
+
+Abstract declarators , pointers and type_name:-
+
