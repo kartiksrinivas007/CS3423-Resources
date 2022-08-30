@@ -1,1 +1,11 @@
 Statement can either be labeled, compound, expression , selection, iteration or jump statements
+The compound statement covers everyhting in the grammar per-se
+compound will derive exp_statemnt, selection, iterations and not only this , the comound statement can also derive a mix of statement_list and declaration_lists
+compound_statemt => {declaration_list}, {statement_list},{declaration_list, statement_list}
+
+{declaration_list is just a list of declarations whcih entail declaration specifiers and init_declarator_lists, whcih entails declarator = initializer and then that entails dircect_declarators whcih then entails 
+
+type _spec, identifier[][] = assigment_exp or {assigment_expr}
+
+so the translation unit just goes on to becoem an external_decl which is a bunch of fund_defs ( like void main()) and a bunch of GLOBAL declarations that are possible.
+
