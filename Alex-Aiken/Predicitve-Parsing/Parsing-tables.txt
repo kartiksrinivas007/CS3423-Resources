@@ -1,0 +1,22 @@
+consider the grammar 
+E -> TX
+T -> int Y | (E)
+X -> +E | eps
+Y -> *T | eps
+
+Here the  main observation is that whenever I see say ' int' then I will make the rule E -> TX for E ( since First (T) contains the int) also I wll use  -> int Y for T
+eg : 
+	(       *   +   )   $
+E       E-> TX
+
+T      T->(E) 
+
+X                      X->eps  X-> eps
+
+Y
+
+Follow (X) = Follow(E) and when we have no direct forductionn for being in the first of X, our only hope is that X boils down to epsilon and what comes later can handle the input on the character stack. that is why on $ or on ) we make that rule happen
+
+however in case that a single variable has multiple derivations on the stack for a particular entry then the grammar is not LL(1)!
+left recursion and nonleft-factored grammars will have this problem
+
