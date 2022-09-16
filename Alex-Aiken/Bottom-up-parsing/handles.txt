@@ -1,0 +1,21 @@
+E -> T + E
+T -> int * T | int | (E)
+
+classic expression grammar
+
+Then take the string int | * int + int
+T -> int could be reduced ... but this may not be then reducible to the start symbol after applying the steps,
+basically a reduction that can get a string that is derivable from S 
+S ->* alpha X w -> alpha Beta w 
+so iff alpha Beta is one the stack then beta can be reduced to X 
+i.e some sequences of reductions can still lead to the start symbol
+
+the handle is the full RHS of the derivation of what you are doing 
+
+Thm : At shift reduce parsing  a handle will occur only appear at the top of thestack
+
+Induction on # reduce moves
+
+Initially 0 moves, epsilon 
+immediately post reduction we move to the right of the non terminal
+next handle must exist to the right of the non terminal or at the non terminal itself ( because it is a rightmost derivation)

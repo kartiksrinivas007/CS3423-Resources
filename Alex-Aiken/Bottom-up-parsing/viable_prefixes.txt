@@ -1,0 +1,33 @@
+alpha is a vaible prefix of omega if 
+the position alpha | omega is a possible state of the shift-reduce parser.
+
+viable_prefix is a prefix that does NOT extend past the right end of the handle
+
+and the set of viable prefixes can be recognized by a finite automata.
+the terminal symbols are obviously the ends of the viable prefix.
+
+the stck usually has only a part of the right hand side 
+stack => prefix_1 prefiix_2 prefix_3 ....prefix_n
+
+basically the items are the ones which show "what we have seen so far"
+
+E - > T | T + E
+T -> int * T | int | (E)
+
+consider (int) 
+then after seeing ( int ...I hope to see a ')' soon then I will be able to perform a reduction.
+
+prefix_n say is the previx of a_n in the rule X_n -> a_n 
+then  post the reduction of prefix_n ( after it becomes a handle of the rule) 
+we will get a_n-1 = prefix_{n-1}X_n beta  and we can continue recursively
+
+eg : (int * int)
+the rules are T -> (E) -> (T) -> (int * T) -> (int * |  int) 
+int * is the first valid int * is the prefix of the second handle we are going to see in this diagram, as after int * T has happened, however I keep track of what i have seen in the second upcoming handle ...etc 
+I have to keep track of every possible handle that can occur
+in a way i need to maintiain the preifxes of all possible handles as I move forward
+so inorder to do this, I will maintian a set of states ( items) which will be able to track "what I expect as next on the stack ".
+
+
+valid items for a prefix are those items that support the rightmost derivation ( the items of the DFA after passing the string through it)
+
